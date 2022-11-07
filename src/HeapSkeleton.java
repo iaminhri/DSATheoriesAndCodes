@@ -27,5 +27,5 @@ abstract class HeapSkeleton<AnyType extends Comparable<?super AnyType>>{
     // Heap Construction Abstract Methods.
     public abstract void percolateDown(int hole); // where hole refers to the place to inserted new element
     public abstract void buildHeap(); // Builds heap off of a data of an Array.
-    public abstract void enlargeArray();// Dynamically changes array size;
+    public abstract void enlargeArray(int length);// Dynamically changes array size;
 }
