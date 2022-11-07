@@ -1,0 +1,26 @@
+public class BinaryHeap<AnyType extends Comparable<?super AnyType>>{
+    //Heap Properties
+
+    private static final int DEFAULT_CAPACITY = 10; // capacity of an array by default.
+
+    private int currentSize; // number of elements in heap
+    private AnyType[] array;
+
+    //Constructors Section
+    public BinaryHeap();
+    public BinaryHeap(int capacity);
+    public BinaryHeap(AnyType[] items);
+
+    //Heap Operations Abstract Methods.
+    public void insert(AnyType x);
+    public AnyType findMin();
+    public AnyType deleteMin();
+    public boolean isEmpty();
+    public void makeEmpty();
+
+    // Heap Construction Abstract Methods.
+    private void percolateDown(int hole) // where hole refers to the place to inserted new element
+    private void buildHeap(); // Builds heap off of a data of an Array.
+    private void enlargeArray(); -> Dynamically changes array size;
+
+}

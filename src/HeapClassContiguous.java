@@ -17,19 +17,26 @@ public class HeapClassContiguous {
         heap[0] = Integer.MIN_VALUE;
     }
 
-    // get parent of a node
+    // gets parent of a node
     private int parentNode(int position){
         return position/2;
     }
 
+    //gets left child of a parent or position
     private int leftChild(int pos){
         return pos * 2;
     }
 
+    //gets right child of a parent or position
     private int rightChild(int pos){
         return (pos*2) + 1;
     }
 
+    /**
+     * checks if the following position isLeaf() or not.
+     * @param pos -> at given position within the heap array.
+     * returns -> boolean
+     */
     private boolean isLeaf(int pos){
         return (pos > (size/2));
     }
@@ -48,6 +55,10 @@ public class HeapClassContiguous {
         heap[sPos] = temp;
     }
 
+    /**
+     * Builds min Heap recursively.
+     * @param pos -> position inside the heap.
+     */
     private void minHeapBuilder(int pos){
         if(!isLeaf(pos)){
             int swapPos = pos;
@@ -64,20 +75,32 @@ public class HeapClassContiguous {
         }
     }
 
+    /**
+     * Inserts elements into the heap.
+     * @param element -> element to be inserted inside heap.
+     */
     public void insert(int element){
+        //if array size exceeds the maxsize then return.
         if(size >= maxsize){
             return;
         }
-        heap[++size] = element;
+        heap[++size] = element; //stores inserted element at the last index of the heap.
 
-        int current = size;
+        int current = size; // stores updated size value for the current inserted node.
 
+        /**
+         * If inserted element is less the parent node then swaps current elements in list until current > parentNode.
+         */
         while(heap[current] < heap[parentNode(current)]){
             swap(current, parentNode(current));
             current = parentNode(current);
         }
     }
 
+    /**
+     * Removes the first element of the array.
+     * @return root value or the min value at the top of the tree.
+     */
     public int removeMin(){
         int min = heap[FRONT];
 
@@ -87,6 +110,9 @@ public class HeapClassContiguous {
         return min;
     }
 
+    /**
+     * Prints the heap() in Level Ordered.
+     */
     public void printHeap(){
         for(int i = 1; i <= size/2; i++){
             System.out.print("Parent: " + heap[i]
