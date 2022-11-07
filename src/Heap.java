@@ -10,7 +10,7 @@ public class Heap extends HeapSkeleton<Integer>{
     public Heap(int capacity){
         this.currentSize = 0;
         heapArr = new int[capacity + 1];
-//        heapArr[0] = Integer.MIN_VALUE;
+        heapArr[0] = Integer.MIN_VALUE;
     }
 
     public boolean isLeaf(int pos){
@@ -18,11 +18,11 @@ public class Heap extends HeapSkeleton<Integer>{
     }
 
     public void inOrderTraversal(int pos){
-        if(isLeaf(pos))
+        if(pos > currentSize)
             return;
         else{
             inOrderTraversal(2 * pos);
-            System.out.print(heapArr[2*pos] + " " );
+            System.out.print(heapArr[pos] + " " );
             inOrderTraversal(2 * pos + 1);
         }
     }
