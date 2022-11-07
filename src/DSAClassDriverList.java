@@ -24,13 +24,16 @@ public class DSAClassDriverList {
 
         newHeap.printHeap();
 
-        System.out.println("Minimum Value: " + newHeap.deleteMin());
-        System.out.println("Minimum Value: " + newHeap.deleteMin());
+//        System.out.println("Minimum Value: " + newHeap.deleteMin());
+//        System.out.println("Minimum Value: " + newHeap.deleteMin());
+//
+//        newHeap.printHeap();
+//
+//        System.out.println("Minimum Value: " + newHeap.deleteMin());
+//        newHeap.printHeap();
 
-        newHeap.printHeap();
-
-        System.out.println("Minimum Value: " + newHeap.deleteMin());
-        newHeap.printHeap();
+        System.out.print("In Order Sort: ");
+        newHeap.inOrderTraversal(1);
     }
 
     public static void main(String[] args) { new DSAClassDriverList(); }

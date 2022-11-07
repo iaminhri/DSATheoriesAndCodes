@@ -13,6 +13,20 @@ public class Heap extends HeapSkeleton<Integer>{
 //        heapArr[0] = Integer.MIN_VALUE;
     }
 
+    public boolean isLeaf(int pos){
+        return pos > currentSize/2;
+    }
+
+    public void inOrderTraversal(int pos){
+        if(isLeaf(pos))
+            return;
+        else{
+            inOrderTraversal(2 * pos);
+            System.out.print(heapArr[2*pos] + " " );
+            inOrderTraversal(2 * pos + 1);
+        }
+    }
+
     @Override
     public void insert(Integer x) {
         if(currentSize == heapArr.length-1){
@@ -100,5 +114,13 @@ public class Heap extends HeapSkeleton<Integer>{
             System.out.print(heapArr[i] + " ");
         }
         System.out.println();
+    }
+
+    public int getCurrentSize() {
+        return currentSize;
+    }
+
+    public int[] getHeapArr() {
+        return heapArr;
     }
 }
