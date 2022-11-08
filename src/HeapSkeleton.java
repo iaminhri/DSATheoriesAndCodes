@@ -18,7 +18,7 @@ abstract class HeapSkeleton<AnyType extends Comparable<?super AnyType>>{
     }
 
     //Heap Operations Abstract Methods.
-    public abstract void insert(AnyType x);
+    public abstract void insert(int x);
     public abstract AnyType findMin();
     public abstract AnyType deleteMin();
     public abstract boolean isEmpty();

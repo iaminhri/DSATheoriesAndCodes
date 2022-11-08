@@ -114,7 +114,8 @@ public class HeapClassContiguous {
      * Prints the heap() in Level Ordered.
      */
     public void printHeap(){
-        for(int i = 1; i <= size/2; i++){
+        minHeapBuilder(1);
+        for(int i = 1; i < size/2; i++){
             System.out.print("Parent: " + heap[i]
             + " LeftChild: " + heap[2*i]
             + " RightChild: " + heap[(2*i)+1]);
